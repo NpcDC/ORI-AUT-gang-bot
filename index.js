@@ -1,3 +1,7 @@
+require("http")
+  .createServer((req, res) => res.end("Bot running"))
+  .listen(process.env.PORT || 3000);
+
 require("dotenv").config();
 
 const { Client, GatewayIntentBits, EmbedBuilder } = require("discord.js");
