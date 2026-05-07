@@ -250,6 +250,21 @@ client.on("interactionCreate", async (i) => {
       return i.reply({ content: "⚪ neutral", flags: 64 });
     }
 
+    /* ================= REFRESH DASHBOARD (ADDED) ================= */
+
+    if (i.commandName === "refreshdashboard") {
+      try {
+        await i.deferReply({ flags: 64 });
+
+        await renderUI(i.guildId);
+
+        return i.editReply("✔ Dashboard refreshed");
+      } catch (err) {
+        console.error(err);
+        if (i.deferred) return i.editReply("❌ refresh failed");
+      }
+    }
+
     /* ================= WAR SYSTEM ================= */
 
     if (i.commandName === "warjumpping") {
