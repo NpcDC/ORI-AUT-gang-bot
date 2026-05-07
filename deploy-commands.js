@@ -69,7 +69,12 @@ const commands = [
 
   new SlashCommandBuilder()
     .setName("resetwarcount")
-    .setDescription("Reset war counter to 1")
+    .setDescription("Reset war counter to 1"),
+
+  // 🟢 NEW COMMAND ADDED
+  new SlashCommandBuilder()
+    .setName("refreshdashboard")
+    .setDescription("Refresh ally/enemy dashboard")
 
 ].map(c => c.toJSON());
 
